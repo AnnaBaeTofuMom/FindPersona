@@ -8,10 +8,9 @@
 import UIKit
 
 protocol QuestionViewBuilderType: ViewBuilderType {
-    //var buttonTitle: String { get }
-    //var nextView: QuestionViewBuilderType { get }
+    // var buttonTitle: String { get }
+    var nextViewBuilder: QuestionViewBuilderType { get }
 }
-
 
 enum QuestionViewBuilder {
     case first
@@ -21,16 +20,19 @@ enum QuestionViewBuilder {
 
 extension QuestionViewBuilder: QuestionViewBuilderType {
     var view: UIViewController {
+        let viewModel = MainViewModel()
+        return MainViewController(viewModel: viewModel, nextView: nextViewBuilder)
+    }
+    
+    var nextViewBuilder: QuestionViewBuilderType {
         switch self {
         case .first:
-            let viewModel = MainViewModel()
-            return MainViewController(viewModel: viewModel, nextView: .second)
+            return QuestionViewBuilder.second
         case .second:
-            let viewModel = MainViewModel()
-            return MainViewController(viewModel: viewModel, nextView: .third)
+            return QuestionViewBuilder.third
         case .third:
-            let viewModel = MainViewModel()
-            return MainViewController(viewModel: viewModel, nextView: .first)
+            // 마지막뷰는 다른뷰의 뷰빌더를 가져와야함
+            return QuestionViewBuilder.first
         }
     }
 }

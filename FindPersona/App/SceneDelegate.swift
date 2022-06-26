@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let firstView = QuestionViewBuilder.first.view
-        window?.rootViewController = firstView
+        let nav = UINavigationController(rootViewController: firstView)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
     

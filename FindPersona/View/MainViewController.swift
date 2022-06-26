@@ -15,17 +15,17 @@ class MainViewController: UIViewController, ViewType {
     typealias ViewModel = MainViewModel
     
     var disposeBag = DisposeBag()
-    var nextView: QuestionViewBuilder
+    var nextViewBuilder: ViewBuilderType
     
     let testButton = UIButton()
     var viewModel: MainViewModel
     
     init(
         viewModel: ViewModel,
-        nextView: QuestionViewBuilder
+        nextView: ViewBuilderType
     ) {
         self.viewModel = viewModel
-        self.nextView = nextView
+        self.nextViewBuilder = nextView
         super.init(nibName: nil, bundle: nil)        
     }
     
@@ -64,8 +64,9 @@ class MainViewController: UIViewController, ViewType {
     func bindOutput() {
         let output = viewModel.transform()        
         output.printedText
-            .drive {
-                print($0)
+            .drive { [weak self] in
+                guard let self = self else { return }                
+                self.navigationController?.pushViewController(self.nextViewBuilder.view, animated: true)
             }.disposed(by: disposeBag)
     }
 }
