@@ -1,6 +1,8 @@
 # FindPersona
 나의 새로운 퍼소나에 이름을 붙여주세요.
 
+![13 Pro - 1](https://user-images.githubusercontent.com/61861862/175961454-9e189011-778f-4f7b-9148-7b7ef95ca01b.png)
+
 ## 코드 컨벤션
 
 **커밋**
