@@ -10,5 +10,5 @@ target 'FindPersona' do
   pod 'RxCocoa'
   pod 'RxRelay'
   pod 'SnapKit'
-
+  pod 'R.swift', '6.1.0'
 end
