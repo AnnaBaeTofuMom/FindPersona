@@ -10,6 +10,7 @@ import RxSwift
 import SnapKit
 import RxCocoa
 import RxRelay
+import Rswift
 
 class MainViewController: UIViewController, ViewType {
     typealias ViewModel = MainViewModel
@@ -17,7 +18,12 @@ class MainViewController: UIViewController, ViewType {
     var disposeBag = DisposeBag()
     var nextViewBuilder: ViewBuilderType
     
-    let testButton = UIButton()
+    var questionLabel = UILabel()
+    var imageView = UIImageView()
+    var choiceButton = UIButton()
+    var choiceButton2 = UIButton()
+    let nextButton = UIButton()
+
     var viewModel: MainViewModel
     
     init(
@@ -35,28 +41,78 @@ class MainViewController: UIViewController, ViewType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = R.color.black()
         configureView()
         makeConstraint()
         bindInput()
         bindOutput()
+        do {
+          try R.validate()
+        } catch {
+           print(error)
+        }
     }
     
     func configureView() {
-        view.addSubview(testButton)
-        testButton.backgroundColor = .red
+        [questionLabel, imageView, choiceButton, choiceButton2, nextButton].forEach {
+            view.addSubview($0)
+        }
+        questionLabel.text = "Which word describes your personality the best ?"
+        questionLabel.font = R.font.pressStart2PRegular(size: 20)
+        questionLabel.numberOfLines = 0
+        questionLabel.textAlignment = .center
+        questionLabel.textColor = R.color.whitegrey()
+        
+        nextButton.backgroundColor = .clear
+        nextButton.setTitle("> next", for: .normal)
+        nextButton.titleLabel?.textColor = R.color.whitegrey()
+        nextButton.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
+        
+        imageView.image = R.image.woods_image()
+        
+        choiceButton.setTitle("> Extrovert", for: .normal)
+        choiceButton.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
+        choiceButton.setTitleColor(R.color.whitegrey(), for: .normal)
+        choiceButton.setTitleColor(R.color.green(), for: .selected)
+        
+        choiceButton2.setTitle("> Introvert", for: .normal)
+        choiceButton2.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
+        choiceButton2.setTitleColor(R.color.whitegrey(), for: .normal)
+        choiceButton2.setTitleColor(R.color.green(), for: .selected)
     }
     
     func makeConstraint() {
-        testButton.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.height.equalTo(200)
+        questionLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width - 100)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(43)
         }
+        
+        imageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(questionLabel.snp.bottom).offset(45)
+        }
+        
+        choiceButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(imageView.snp.bottom).offset(45)
+        }
+        
+        choiceButton2.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(choiceButton.snp.bottom).offset(8)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(choiceButton.snp.bottom).offset(120)
+        }
+        
     }
     
     func bindInput() {
         let input = viewModel.input
-        testButton.rx.tap
+        nextButton.rx.tap
             .bind(to: input.testButtonDidTap)
             .disposed(by: disposeBag)
     }

@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -105,10 +106,18 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  /// This `R.color` struct is generated, and contains static references to 5 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
+    /// Color `black`.
+    static let black = Rswift.ColorResource(bundle: R.hostingBundle, name: "black")
+    /// Color `green`.
+    static let green = Rswift.ColorResource(bundle: R.hostingBundle, name: "green")
+    /// Color `red`.
+    static let red = Rswift.ColorResource(bundle: R.hostingBundle, name: "red")
+    /// Color `whitegrey`.
+    static let whitegrey = Rswift.ColorResource(bundle: R.hostingBundle, name: "whitegrey")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
@@ -119,11 +128,179 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "black", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func black(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.black, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "green", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func green(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.green, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "red", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func red(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.red, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "whitegrey", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func whitegrey(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.whitegrey, compatibleWith: traitCollection)
+    }
+    #endif
+
     #if os(watchOS)
     /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func accentColor(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.accentColor.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "black", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func black(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.black.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "green", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func green(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.green.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "red", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func red(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.red.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "whitegrey", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func whitegrey(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.whitegrey.name)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `PressStart2P-Regular.ttf`.
+    static let pressStart2PRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "PressStart2P-Regular", pathExtension: "ttf")
+
+    /// `bundle.url(forResource: "PressStart2P-Regular", withExtension: "ttf")`
+    static func pressStart2PRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.pressStart2PRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `PressStart2P-Regular`.
+    static let pressStart2PRegular = Rswift.FontResource(fontName: "PressStart2P-Regular")
+
+    /// `UIFont(name: "PressStart2P-Regular", size: ...)`
+    static func pressStart2PRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: pressStart2PRegular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.pressStart2PRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'PressStart2P-Regular' could not be loaded, is 'PressStart2P-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 7 images.
+  struct image {
+    /// Image `monkey_image`.
+    static let monkey_image = Rswift.ImageResource(bundle: R.hostingBundle, name: "monkey_image")
+    /// Image `orbit_image`.
+    static let orbit_image = Rswift.ImageResource(bundle: R.hostingBundle, name: "orbit_image")
+    /// Image `runner_image`.
+    static let runner_image = Rswift.ImageResource(bundle: R.hostingBundle, name: "runner_image")
+    /// Image `save_icon`.
+    static let save_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "save_icon")
+    /// Image `setting_icon`.
+    static let setting_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting_icon")
+    /// Image `text_logo`.
+    static let text_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "text_logo")
+    /// Image `woods_image`.
+    static let woods_image = Rswift.ImageResource(bundle: R.hostingBundle, name: "woods_image")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "monkey_image", bundle: ..., traitCollection: ...)`
+    static func monkey_image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.monkey_image, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "orbit_image", bundle: ..., traitCollection: ...)`
+    static func orbit_image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.orbit_image, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "runner_image", bundle: ..., traitCollection: ...)`
+    static func runner_image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.runner_image, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "save_icon", bundle: ..., traitCollection: ...)`
+    static func save_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.save_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "setting_icon", bundle: ..., traitCollection: ...)`
+    static func setting_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.setting_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "text_logo", bundle: ..., traitCollection: ...)`
+    static func text_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.text_logo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "woods_image", bundle: ..., traitCollection: ...)`
+    static func woods_image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.woods_image, compatibleWith: traitCollection)
     }
     #endif
 
