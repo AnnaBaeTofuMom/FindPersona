@@ -23,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3A930D2F286B39DD00D9E958 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		8933F77928684A7B0052A96D /* ViewBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderType.swift; sourceTree = "<group>"; };
 		8933F77B28684AF50052A96D /* QuestionViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewBuilder.swift; sourceTree = "<group>"; };
 		894F175428675EC300F34D57 /* FindPersona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPersona.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A930D31286B3B2B00D9E958 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		72929A489760B89A138D3B08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +147,7 @@
 		894F177028675F3200F34D57 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A930D31286B3B2B00D9E958 /* font */,
 				894F176028675EC300F34D57 /* Assets.xcassets */,
 				894F176228675EC300F34D57 /* LaunchScreen.storyboard */,
 				894F176528675EC300F34D57 /* Info.plist */,
