@@ -12,7 +12,7 @@ import RxCocoa
 import RxRelay
 import Rswift
 
-class MainViewController: UIViewController, ViewType {
+class QuestionViewController: UIViewController, ViewType {
     typealias ViewModel = MainViewModel
     
     var disposeBag = DisposeBag()
@@ -20,8 +20,8 @@ class MainViewController: UIViewController, ViewType {
     
     var questionLabel = UILabel()
     var imageView = UIImageView()
-    var choiceButton = UIButton()
-    var choiceButton2 = UIButton()
+    var firstChoiceButton = UIButton()
+    var secondChoiceButton = UIButton()
     let nextButton = UIButton()
 
     var viewModel: MainViewModel
@@ -46,15 +46,10 @@ class MainViewController: UIViewController, ViewType {
         makeConstraint()
         bindInput()
         bindOutput()
-        do {
-          try R.validate()
-        } catch {
-           print(error)
-        }
     }
     
     func configureView() {
-        [questionLabel, imageView, choiceButton, choiceButton2, nextButton].forEach {
+        [questionLabel, imageView, firstChoiceButton, secondChoiceButton, nextButton].forEach {
             view.addSubview($0)
         }
         questionLabel.text = "Which word describes your personality the best ?"
@@ -70,15 +65,15 @@ class MainViewController: UIViewController, ViewType {
         
         imageView.image = R.image.woods_image()
         
-        choiceButton.setTitle("> Extrovert", for: .normal)
-        choiceButton.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
-        choiceButton.setTitleColor(R.color.whitegrey(), for: .normal)
-        choiceButton.setTitleColor(R.color.green(), for: .selected)
+        firstChoiceButton.setTitle("> Extrovert", for: .normal)
+        firstChoiceButton.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
+        firstChoiceButton.setTitleColor(R.color.whitegrey(), for: .normal)
+        firstChoiceButton.setTitleColor(R.color.green(), for: .selected)
         
-        choiceButton2.setTitle("> Introvert", for: .normal)
-        choiceButton2.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
-        choiceButton2.setTitleColor(R.color.whitegrey(), for: .normal)
-        choiceButton2.setTitleColor(R.color.green(), for: .selected)
+        secondChoiceButton.setTitle("> Introvert", for: .normal)
+        secondChoiceButton.titleLabel?.font = R.font.pressStart2PRegular(size: 17)
+        secondChoiceButton.setTitleColor(R.color.whitegrey(), for: .normal)
+        secondChoiceButton.setTitleColor(R.color.green(), for: .selected)
     }
     
     func makeConstraint() {
@@ -93,19 +88,19 @@ class MainViewController: UIViewController, ViewType {
             make.top.equalTo(questionLabel.snp.bottom).offset(45)
         }
         
-        choiceButton.snp.makeConstraints { make in
+        firstChoiceButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(45)
         }
         
-        choiceButton2.snp.makeConstraints { make in
+        secondChoiceButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(choiceButton.snp.bottom).offset(8)
+            make.top.equalTo(firstChoiceButton.snp.bottom).offset(8)
         }
         
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(choiceButton.snp.bottom).offset(120)
+            make.top.equalTo(firstChoiceButton.snp.bottom).offset(120)
         }
         
     }

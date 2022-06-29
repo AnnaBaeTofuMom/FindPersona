@@ -38,11 +38,6 @@ class StartViewController: UIViewController, ViewType {
         makeConstraint()
         bindInput()
         bindOutput()
-        do {
-          try R.validate()
-        } catch {
-            print(error)
-        }
     }
     
     func configureView() {
