@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A930D30286B39DD00D9E958 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A930D2F286B39DD00D9E958 /* R.generated.swift */; };
+		3A930D34286B40BE00D9E958 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A930D33286B40BE00D9E958 /* StartViewController.swift */; };
+		3A930D36286B40EF00D9E958 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A930D35286B40EF00D9E958 /* StartViewModel.swift */; };
+		3A930D37286B4AB200D9E958 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */; };
 		802A3DE17801E86C0D4AAAE0 /* Pods_FindPersona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59ABE6DDF3B27C21FB7DA63 /* Pods_FindPersona.framework */; };
 		8933F77A28684A7B0052A96D /* ViewBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933F77928684A7B0052A96D /* ViewBuilderType.swift */; };
 		8933F77C28684AF50052A96D /* QuestionViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933F77B28684AF50052A96D /* QuestionViewBuilder.swift */; };
@@ -14,13 +18,17 @@
 		894F175A28675EC300F34D57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F175928675EC300F34D57 /* SceneDelegate.swift */; };
 		894F176128675EC300F34D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 894F176028675EC300F34D57 /* Assets.xcassets */; };
 		894F176428675EC300F34D57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894F176228675EC300F34D57 /* LaunchScreen.storyboard */; };
-		894F177228675F7A00F34D57 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F177128675F7A00F34D57 /* MainViewController.swift */; };
+		894F177228675F7A00F34D57 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F177128675F7A00F34D57 /* QuestionViewController.swift */; };
 		89584D012868430D00AD094F /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89584D002868430D00AD094F /* ViewType.swift */; };
 		89584D03286843FA00AD094F /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89584D02286843FA00AD094F /* ViewModelType.swift */; };
 		89584D05286845A000AD094F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89584D04286845A000AD094F /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A930D2F286B39DD00D9E958 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
+		3A930D33286B40BE00D9E958 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		3A930D35286B40EF00D9E958 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		8933F77928684A7B0052A96D /* ViewBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderType.swift; sourceTree = "<group>"; };
 		8933F77B28684AF50052A96D /* QuestionViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewBuilder.swift; sourceTree = "<group>"; };
 		894F175428675EC300F34D57 /* FindPersona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPersona.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,7 +37,7 @@
 		894F176028675EC300F34D57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		894F176328675EC300F34D57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		894F176528675EC300F34D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		894F177128675F7A00F34D57 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		894F177128675F7A00F34D57 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		89584D002868430D00AD094F /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		89584D02286843FA00AD094F /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		89584D04286845A000AD094F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -50,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A930D31286B3B2B00D9E958 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		72929A489760B89A138D3B08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +77,7 @@
 		894F174B28675EC300F34D57 = {
 			isa = PBXGroup;
 			children = (
+				3A930D2F286B39DD00D9E958 /* R.generated.swift */,
 				894F175628675EC300F34D57 /* FindPersona */,
 				894F175528675EC300F34D57 /* Products */,
 				A17EE5396D68CCCE54178210 /* Pods */,
@@ -92,8 +109,9 @@
 		894F176B28675F1000F34D57 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				894F177128675F7A00F34D57 /* MainViewController.swift */,
 				89584D002868430D00AD094F /* ViewType.swift */,
+				894F177128675F7A00F34D57 /* QuestionViewController.swift */,
+				3A930D33286B40BE00D9E958 /* StartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +121,7 @@
 			children = (
 				89584D02286843FA00AD094F /* ViewModelType.swift */,
 				89584D04286845A000AD094F /* MainViewModel.swift */,
+				3A930D35286B40EF00D9E958 /* StartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +154,7 @@
 		894F177028675F3200F34D57 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A930D31286B3B2B00D9E958 /* font */,
 				894F176028675EC300F34D57 /* Assets.xcassets */,
 				894F176228675EC300F34D57 /* LaunchScreen.storyboard */,
 				894F176528675EC300F34D57 /* Info.plist */,
@@ -159,6 +179,7 @@
 			buildConfigurationList = 894F176828675EC300F34D57 /* Build configuration list for PBXNativeTarget "FindPersona" */;
 			buildPhases = (
 				519881F43CDAA7C0B1E6338E /* [CP] Check Pods Manifest.lock */,
+				3A930D2E286B395600D9E958 /* ShellScript */,
 				894F175028675EC300F34D57 /* Sources */,
 				894F175128675EC300F34D57 /* Frameworks */,
 				894F175228675EC300F34D57 /* Resources */,
@@ -211,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A930D37286B4AB200D9E958 /* PressStart2P-Regular.ttf in Resources */,
 				894F176428675EC300F34D57 /* LaunchScreen.storyboard in Resources */,
 				894F176128675EC300F34D57 /* Assets.xcassets in Resources */,
 			);
@@ -219,6 +241,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A930D2E286B395600D9E958 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		519881F43CDAA7C0B1E6338E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,14 +306,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				894F177228675F7A00F34D57 /* MainViewController.swift in Sources */,
+				894F177228675F7A00F34D57 /* QuestionViewController.swift in Sources */,
 				8933F77A28684A7B0052A96D /* ViewBuilderType.swift in Sources */,
+				3A930D30286B39DD00D9E958 /* R.generated.swift in Sources */,
 				894F175828675EC300F34D57 /* AppDelegate.swift in Sources */,
 				89584D012868430D00AD094F /* ViewType.swift in Sources */,
+				3A930D34286B40BE00D9E958 /* StartViewController.swift in Sources */,
 				89584D03286843FA00AD094F /* ViewModelType.swift in Sources */,
 				894F175A28675EC300F34D57 /* SceneDelegate.swift in Sources */,
 				8933F77C28684AF50052A96D /* QuestionViewBuilder.swift in Sources */,
 				89584D05286845A000AD094F /* MainViewModel.swift in Sources */,
+				3A930D36286B40EF00D9E958 /* StartViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

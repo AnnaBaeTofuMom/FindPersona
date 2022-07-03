@@ -21,7 +21,7 @@ enum QuestionViewBuilder {
 extension QuestionViewBuilder: QuestionViewBuilderType {
     var view: UIViewController {
         let viewModel = MainViewModel()
-        return MainViewController(viewModel: viewModel, nextView: nextViewBuilder)
+        return QuestionViewController(viewModel: viewModel, nextView: nextViewBuilder)
     }
     
     var nextViewBuilder: QuestionViewBuilderType {
