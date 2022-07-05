@@ -8,19 +8,19 @@
 import AVFoundation
 import UIKit
 
-class AudioManager {
-  public let shared = AudioManager()
+class AudioManager: NSObject {
+  public static let shared = AudioManager()
   private var player: AVAudioPlayer?
   private var isPlaying: Bool = false
 
-  private init() {
-    setupPlayer()
-    playOrPause()
+  private override init() {
+    super.init()
+    self.setupPlayer()
   }
 
   private func setupPlayer() {
     guard
-      let soundAsset = NSDataAsset(name : "Til I Hear'em Say - NEFFEX") // TODO: - R.Swift 적용필요
+      let soundAsset = NSDataAsset(name : "Til I Hear'em Say (Instrumental) - NEFFEX") // TODO: - R.Swift 적용필요
     else {
       print("음원없음")
       return
