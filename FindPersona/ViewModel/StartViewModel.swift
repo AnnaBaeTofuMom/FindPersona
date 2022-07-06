@@ -15,21 +15,17 @@ final class StartViewModel: ViewModelType {
     
     
     struct Input {
-        var testButtonDidTap = PublishRelay<Void>()
+        let startButtonDidTap = PublishRelay<Void>()
     }
     
     struct Output {
-        var printedText: Driver<String>
+        let startButtonDidTap: Driver<Void>
     }
     
     var input = Input()
     
     func transform() -> Output {
-        
-        let printedText = input.testButtonDidTap
-            .map { "프린트됨" }
-            .asDriver(onErrorJustReturn: "")
-        
-        return Output(printedText: printedText)
+        let startButtonDidTap = input.startButtonDidTap.asDriver(onErrorJustReturn: Void())
+        return Output(startButtonDidTap: startButtonDidTap)
     }
 }
