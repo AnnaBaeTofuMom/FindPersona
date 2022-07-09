@@ -11,4 +11,5 @@ target 'FindPersona' do
   pod 'RxRelay'
   pod 'SnapKit'
   pod 'R.swift', '6.1.0'
+  pod 'lottie-ios'
 end
