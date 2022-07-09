@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let firstView = QuestionViewBuilder.first.view
+        // 여기는 이제 수정 X
+        let firstView = ViewBuilder.start.view
         let nav = UINavigationController(rootViewController: firstView)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
