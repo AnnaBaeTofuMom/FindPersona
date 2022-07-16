@@ -6,49 +6,64 @@
 //
 
 import AVFoundation
-import UIKit
+import Foundation
 
-class AudioManager: NSObject {
+import RxCocoa
+import RxSwift
+
+enum PlayerState {
+  case playing
+  case pause
+  case unknwon
+}
+
+class AudioManager {
   public static let shared = AudioManager()
-  private var player: AVAudioPlayer?
-  private var isPlaying: Bool = false
 
-  private override init() {
-    super.init()
-    self.setupPlayer()
+  private var player: AVAudioPlayer = AVAudioPlayer()
+  var state = BehaviorRelay<PlayerState>(value: .unknwon)
+  var disposeBag = DisposeBag()
+
+  private init() {
+    setupPlayer()
+    bind()
   }
 
   private func setupPlayer() {
     guard
-      let soundAsset = NSDataAsset(name : "Til I Hear'em Say (Instrumental) - NEFFEX") // TODO: - R.Swift 적용필요
+      let soundAsset = NSDataAsset(name : "Til I Hear'em Say (Instrumental) - NEFFEX")
     else {
-      print("음원없음")
+      print("Load Music Fail")
       return
     }
     do {
-      try self.player = AVAudioPlayer(data: soundAsset.data)
-      self.player?.delegate = self
+      try player = AVAudioPlayer(data: soundAsset.data)
+      player.numberOfLoops = -1
     } catch let error as NSError {
       print("Player Error", error)
     }
   }
 
-  func playOrPause() {
-    switch self.isPlaying {
-    case false:
-      self.player?.play()
-    case true:
-      self.player?.stop()
-    }
-    self.isPlaying.toggle()
+  private func bind() {
+    state
+      .subscribe(onNext: { [weak self] value in
+        switch value {
+        case .playing:
+          self?.player.play()
+        case .pause:
+          self?.player.pause()
+        case .unknwon:
+          print("Can't find Music File")
+        }
+      })
+      .disposed(by: disposeBag)
   }
 
-}
+  func play() {
+    state.accept(.playing)
+  }
 
-extension AudioManager: AVAudioPlayerDelegate {
-  func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    self.player?.stop()
-    self.player?.currentTime = TimeInterval(0.0)
-    self.player?.play()
+  func stop() {
+    state.accept(.pause)
   }
 }

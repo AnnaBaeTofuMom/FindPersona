@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
            print(error)
         }
-        AudioManager.shared.playOrPause()
+        AudioManager.shared.play()
         return true
     }
     
