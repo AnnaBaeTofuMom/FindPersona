@@ -8,21 +8,22 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
+import RxRelay
 import SnapKit
 import Rswift
 
 class StartViewController: UIViewController, ViewType {
     typealias ViewModel = StartViewModel
     var disposeBag: DisposeBag
-    var viewModel = StartViewModel()
+    var viewModel: ViewModel
+    
     var logoImageView = UIImageView()
     var orbitImageView = UIImageView()
     var startButton = UIButton()
     var settingsButton = UIButton()
 
-    init(
-        viewModel: ViewModel
-    ) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         self.disposeBag = DisposeBag()
         super.init(nibName: nil, bundle: nil)
@@ -80,12 +81,33 @@ class StartViewController: UIViewController, ViewType {
     }
     
     func bindInput() {
+        let input = viewModel.input
         
+        startButton.rx.tap
+            .bind(to: input.startButtonDidTap)
+            .disposed(by: disposeBag)
     }
     
     func bindOutput() {
+        let output = viewModel.transform()
         
+        output.startButtonDidTap            
+            .drive(self.rx.pushFirstQuestionView)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension Reactive where Base: StartViewController {
+    var pushFirstQuestionView: Binder<Void> {
+        return Binder(base.self) { vc, _ in
+            let view = QuestionViewBuilder.first.view
+            vc.navigationController?.pushViewController(view, animated: true)
+        }
     }
     
-
+//    var pushSettingView: Binder<Void> {
+//        return Binder(base.self) {
+//            // setting view push
+//        }
+//    }
 }
