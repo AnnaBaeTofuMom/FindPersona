@@ -14,15 +14,15 @@ import RxSwift
 enum PlayerState {
   case playing
   case pause
-  case unknwon
+  case error
 }
 
 class AudioManager {
   public static let shared = AudioManager()
 
   private var player: AVAudioPlayer = AVAudioPlayer()
-  var state = BehaviorRelay<PlayerState>(value: .unknwon)
-  var disposeBag = DisposeBag()
+  var state = PublishRelay<PlayerState>()
+  private var disposeBag = DisposeBag()
 
   private init() {
     setupPlayer()
@@ -31,17 +31,14 @@ class AudioManager {
 
   private func setupPlayer() {
     guard
-      let soundAsset = NSDataAsset(name : "Til I Hear'em Say (Instrumental) - NEFFEX")
+      let soundAsset = NSDataAsset(name : "Til I Hear'em Say (Instrumental) - NEFFEX"),
+      let player = try? AVAudioPlayer(data: soundAsset.data)
     else {
       print("Load Music Fail")
       return
     }
-    do {
-      try player = AVAudioPlayer(data: soundAsset.data)
-      player.numberOfLoops = -1
-    } catch let error as NSError {
-      print("Player Error", error)
-    }
+    self.player = player
+    self.player.numberOfLoops = -1
   }
 
   private func bind() {
@@ -52,18 +49,9 @@ class AudioManager {
           self?.player.play()
         case .pause:
           self?.player.pause()
-        case .unknwon:
-          print("Can't find Music File")
+        case .error:
+          print("Can't find Music File") // Debug Print
         }
-      })
-      .disposed(by: disposeBag)
-  }
-
-  func play() {
-    state.accept(.playing)
-  }
-
-  func stop() {
-    state.accept(.pause)
+      }).disposed(by: disposeBag)
   }
 }
