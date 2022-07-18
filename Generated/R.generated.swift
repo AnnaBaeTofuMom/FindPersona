@@ -319,7 +319,7 @@ struct R: Rswift.Validatable {
   struct info {
     struct uiApplicationSceneManifest {
       static let _key = "UIApplicationSceneManifest"
-      static let uiApplicationSupportsMultipleScenes = false
+      static let uiApplicationSupportsMultipleScenes = true
 
       struct uiSceneConfigurations {
         static let _key = "UISceneConfigurations"
