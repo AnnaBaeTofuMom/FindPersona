@@ -21,7 +21,7 @@ class AudioManager {
   public static let shared = AudioManager()
 
   private var player: AVAudioPlayer = AVAudioPlayer()
-  var state = PublishRelay<PlayerState>()
+  var state = BehaviorRelay<PlayerState>(value: .error)
   private var disposeBag = DisposeBag()
 
   private init() {

@@ -12,6 +12,8 @@
 		3A930D36286B40EF00D9E958 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A930D35286B40EF00D9E958 /* StartViewModel.swift */; };
 		3A930D37286B4AB200D9E958 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */; };
 		653AC45E2874666F0060BED9 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653AC45D2874666F0060BED9 /* AudioManager.swift */; };
+		65B0FF70288314BD0065699B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B0FF6F288314BD0065699B /* SettingViewController.swift */; };
+		65E38C3828852BF9007C2CE3 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E38C3728852BF9007C2CE3 /* SettingViewModel.swift */; };
 		802A3DE17801E86C0D4AAAE0 /* Pods_FindPersona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59ABE6DDF3B27C21FB7DA63 /* Pods_FindPersona.framework */; };
 		891913CC2875CA5500517E85 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891913CB2875CA5500517E85 /* ViewBuilder.swift */; };
 		8933F77A28684A7B0052A96D /* ViewBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933F77928684A7B0052A96D /* ViewBuilderType.swift */; };
@@ -35,10 +37,10 @@
 		3A930D32286B3B3E00D9E958 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		3A930D33286B40BE00D9E958 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		3A930D35286B40EF00D9E958 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
-
 		653AC45D2874666F0060BED9 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		65B0FF6F288314BD0065699B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		65E38C3728852BF9007C2CE3 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		891913CB2875CA5500517E85 /* ViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
-
 		8933F77928684A7B0052A96D /* ViewBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderType.swift; sourceTree = "<group>"; };
 		8933F77B28684AF50052A96D /* QuestionViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewBuilder.swift; sourceTree = "<group>"; };
 		894F175428675EC300F34D57 /* FindPersona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPersona.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				894F177128675F7A00F34D57 /* QuestionViewController.swift */,
 				3A930D33286B40BE00D9E958 /* StartViewController.swift */,
 				89F0C310287718B4005D21CD /* LoadingViewController.swift */,
+				65B0FF6F288314BD0065699B /* SettingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				89584D04286845A000AD094F /* MainViewModel.swift */,
 				3A930D35286B40EF00D9E958 /* StartViewModel.swift */,
 				89F0C31228771ADF005D21CD /* LoadingViewModel.swift */,
+				65E38C3728852BF9007C2CE3 /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -348,7 +352,9 @@
 				3A930D30286B39DD00D9E958 /* R.generated.swift in Sources */,
 				89F0C31328771ADF005D21CD /* LoadingViewModel.swift in Sources */,
 				891913CC2875CA5500517E85 /* ViewBuilder.swift in Sources */,
+				65B0FF70288314BD0065699B /* SettingViewController.swift in Sources */,
 				894F175828675EC300F34D57 /* AppDelegate.swift in Sources */,
+				65E38C3828852BF9007C2CE3 /* SettingViewModel.swift in Sources */,
 				89584D012868430D00AD094F /* ViewType.swift in Sources */,
 				3A930D34286B40BE00D9E958 /* StartViewController.swift in Sources */,
 				653AC45E2874666F0060BED9 /* AudioManager.swift in Sources */,

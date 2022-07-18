@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 여기는 이제 수정 X
         let firstView = ViewBuilder.start.view
         let nav = UINavigationController(rootViewController: firstView)
-        window?.rootViewController = nav
+        window?.rootViewController = UINavigationController(rootViewController: SettingViewController(viewModel: SettingViewModel()))
         window?.makeKeyAndVisible()
     }
     
